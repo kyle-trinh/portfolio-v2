@@ -3,6 +3,10 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Wrapper } from "./Wrapper"
 import { Box, VStack, Text, Button } from "@chakra-ui/react"
 import { Link } from "gatsby"
+import { motion } from "framer-motion"
+
+const MotionBox = motion(Box)
+
 export default function Header() {
   return (
     <Box height={`calc(100vh - 72px)`} position="relative">
@@ -50,6 +54,34 @@ export default function Header() {
           </Link>
         </VStack>
       </Wrapper>
+      <Box
+        position="absolute"
+        bottom={0}
+        left="50%"
+        transform="translateX(-50%)"
+      >
+        <Box
+          height="60px"
+          width="40px"
+          border="4px solid #2B6CB0"
+          mb="40px"
+          borderRadius="40px"
+          position="relative"
+        >
+          <MotionBox
+            position="absolute"
+            top="20%"
+            left="45%"
+            transform="translate(-60%, -50%)"
+            height="14px"
+            width="5px"
+            borderRadius="20px"
+            backgroundColor="#2B6CB0"
+            animate={{ y: 10 }}
+            transition={{ ease: "easeOut", repeat: "Infinity", duration: 1 }}
+          ></MotionBox>
+        </Box>
+      </Box>
     </Box>
   )
 }
