@@ -36,7 +36,7 @@ const navs = [
   },
 ]
 
-export default function ({ children }) {
+export default function Layout({ children }) {
   return (
     <>
       <Box as="nav" py={4}>

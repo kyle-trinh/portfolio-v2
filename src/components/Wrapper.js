@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react"
 import React from "react"
 
-export const Wrapper = ({ children }) => {
+export const Wrapper = ({ children, ...props }) => {
   return (
     <Box
       w="100%"
@@ -24,6 +24,7 @@ export const Wrapper = ({ children }) => {
           maxW: "1320px",
         },
       }}
+      {...props}
     >
       {children}
     </Box>

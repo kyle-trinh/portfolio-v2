@@ -1,6 +1,6 @@
 import React from "react"
-import { Button } from "@chakra-ui/react"
+import Header from "../components/Header"
 
 export default function Home() {
-  return <h1>Home</h1>
+  return <Header />
 }
