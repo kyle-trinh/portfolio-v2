@@ -8,6 +8,11 @@ const theme = {
       lineHeight: 1,
       fontWeight: "bold",
     },
+    h2: {
+      fontSize: ["24", "48"],
+      lineHeight: 1,
+      fontWeight: "bold",
+    },
   },
 }
 
