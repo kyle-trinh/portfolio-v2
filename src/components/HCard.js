@@ -25,7 +25,7 @@ export default function HCard({
   homepage,
   technologies,
   cover,
-  id,
+  index,
 }) {
   const image = getImage(cover)
   console.log(image)
@@ -47,12 +47,12 @@ export default function HCard({
         gridGap="80px"
       >
         <Box
-          gridColumn={id % 2 === 1 ? "1/2" : "2"}
+          gridColumn={index % 2 === 0 ? "1/2" : "2"}
           gridRow="1"
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          paddingLeft="60px"
+          paddingLeft={index % 2 === 0 ? "60px" : "0"}
         >
           <Link to={href}>
             <Text
@@ -107,9 +107,8 @@ export default function HCard({
             alignItems="center"
             bg="gray.200"
             borderRadius="3xl"
-            height="400px"
             gridRow="1"
-            gridColumn={id % 2 === 0 ? "1/2" : "2"}
+            gridColumn={index % 2 === 1 ? "1/2" : "2"}
             _hover={{ "&::after": { opacity: "60%" } }}
             position="relative"
             _after={{
@@ -128,10 +127,9 @@ export default function HCard({
           >
             <GatsbyImage
               image={image}
-              alt="asd"
+              alt={name}
               style={{
                 borderRadius: "20px",
-                height: "100%",
               }}
             />
             {/* <StaticImage

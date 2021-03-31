@@ -11,6 +11,7 @@ export default function Projects() {
     query MyQuery {
       projects: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/projects/" } }
+        sort: { fields: frontmatter___id, order: ASC }
       ) {
         edges {
           node {
@@ -26,7 +27,11 @@ export default function Projects() {
               cover {
                 relativePath
                 childImageSharp {
-                  gatsbyImageData(quality: 100, placeholder: BLURRED)
+                  gatsbyImageData(
+                    quality: 100
+                    placeholder: BLURRED
+                    height: 400
+                  )
                 }
               }
             }
@@ -44,7 +49,7 @@ export default function Projects() {
           <SectionSub>I build projects to showcase what I learned</SectionSub>
         </Box>
         <VStack spacing={8} mt={8}>
-          {data.projects.edges.map(edge => {
+          {data.projects.edges.map((edge, index) => {
             const project = edge.node.frontmatter
             return (
               <HCard
@@ -57,6 +62,7 @@ export default function Projects() {
                 technologies={project.tech}
                 id={parseInt(project.id)}
                 cover={project.cover}
+                index={index}
               ></HCard>
             )
           })}
