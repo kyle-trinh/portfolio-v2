@@ -1,7 +1,16 @@
 import React from "react"
-import { Grid, Box, VStack, Text, Icon, HStack, Button } from "@chakra-ui/react"
+import {
+  Grid,
+  Box,
+  VStack,
+  Text,
+  Icon,
+  HStack,
+  Button,
+  AbsoluteCenter,
+} from "@chakra-ui/react"
 import { motion } from "framer-motion"
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FaGithub, FaLink } from "react-icons/fa"
 import ExternalLink from "./ExternalLink"
 import { Link } from "gatsby"
@@ -15,7 +24,11 @@ export default function HCard({
   github,
   homepage,
   technologies,
+  cover,
+  id,
 }) {
+  const image = getImage(cover)
+  console.log(image)
   return (
     <MotionBox
       bg="#fff"
@@ -34,12 +47,14 @@ export default function HCard({
         gridGap="80px"
       >
         <Box
+          gridColumn={id % 2 === 1 ? "1/2" : "2"}
+          gridRow="1"
           display="flex"
           flexDirection="column"
           justifyContent="center"
           paddingLeft="60px"
         >
-          <Link href={href}>
+          <Link to={href}>
             <Text
               fontWeight="bold"
               fontSize="32px"
@@ -57,7 +72,7 @@ export default function HCard({
           </Link>
           <Text my="12px">{description}</Text>
           <Text color="gray.500">{technologies.join(" - ")} </Text>
-          <Link href={href}>
+          <Link to={href}>
             <Button variant="outline" mt="8px">
               Read more
             </Button>
@@ -85,18 +100,42 @@ export default function HCard({
             </ExternalLink>
           </HStack>
         </Box>
-        <Link href={href}>
+        <Link to={href}>
           <Box
             display="flex"
             justifyContent="flex-end"
             alignItems="center"
             bg="gray.200"
             borderRadius="3xl"
-            _hover={{ bg: "yellow.200" }}
-            transition="all 0.5s ease-out"
+            height="400px"
+            gridRow="1"
+            gridColumn={id % 2 === 0 ? "1/2" : "2"}
+            _hover={{ "&::after": { opacity: "60%" } }}
+            position="relative"
+            _after={{
+              content: '""',
+              position: "absolute",
+              zIndex: 8,
+              height: "100%",
+              width: "100%",
+              top: 0,
+              left: 0,
+              backgroundColor: "blue.400",
+              transition: "all 0.5s ease-out",
+              borderRadius: "3xl",
+              opacity: 0,
+            }}
           >
-            <StaticImage
-              src="../assets/images/themoviedb.png"
+            <GatsbyImage
+              image={image}
+              alt="asd"
+              style={{
+                borderRadius: "20px",
+                height: "100%",
+              }}
+            />
+            {/* <StaticImage
+              src={`../../content/${cover}`}
               alt="binh trinh"
               placeholder="blurred"
               layout="constrained"
@@ -104,7 +143,7 @@ export default function HCard({
               height={400}
               quality={100}
               style={{ borderRadius: "20px" }}
-            />
+            /> */}
           </Box>
         </Link>
       </Grid>
