@@ -12,6 +12,10 @@ import {
 import { Link as GatsbyLink } from "gatsby"
 import { Wrapper } from "./Wrapper"
 import { RiMailSendLine } from "react-icons/ri"
+import Skill from "./Skill"
+import { MDXProvider } from "@mdx-js/react"
+
+const shortcodes = { Skill }
 
 const navs = [
   {
@@ -38,7 +42,7 @@ const navs = [
 
 export default function Layout({ children }) {
   return (
-    <>
+    <MDXProvider components={shortcodes}>
       <Box as="nav" py={4}>
         <Wrapper>
           <Flex alignItems="center" justifyContent="space-between">
@@ -80,6 +84,6 @@ export default function Layout({ children }) {
         </Wrapper>
       </Box>
       {children}
-    </>
+    </MDXProvider>
   )
 }

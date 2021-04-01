@@ -1,10 +1,10 @@
 import React from "react"
-import { Box, VStack } from "@chakra-ui/react"
+import { Box, VStack, Button } from "@chakra-ui/react"
 import Section from "./Section"
 import { Wrapper } from "./Wrapper"
 import { SectionTitle, SectionSub } from "./Typography"
 import HCard from "./HCard"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 export default function Projects() {
   const data = useStaticQuery(graphql`
@@ -66,6 +66,9 @@ export default function Projects() {
               ></HCard>
             )
           })}
+          <Link to="/projects">
+            <Button>More</Button>
+          </Link>
         </VStack>
       </Wrapper>
     </Section>
