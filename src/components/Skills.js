@@ -9,7 +9,10 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 export default function Skills() {
   const data = useStaticQuery(graphql`
     query SkillQuery {
-      skills: allMdx(filter: { fileAbsolutePath: { regex: "/skills/" } }) {
+      skills: allMdx(
+        filter: { fileAbsolutePath: { regex: "/skills/" } }
+        sort: { fields: frontmatter___id }
+      ) {
         edges {
           node {
             body
@@ -36,10 +39,24 @@ export default function Skills() {
             alignItems="stretch"
             spacing="20px"
           >
-            <Text fontSize="24px">Technologies that I'm proficient in</Text>
-            <Grid templateColumns="repeat(4, 1fr)" gridGap="20px">
-              <MDXRenderer>{data.skills.edges[0].node.body}</MDXRenderer>
-            </Grid>
+            <Box>
+              <Text fontSize="24px">Technologies that I'm proficient in</Text>
+              <Grid templateColumns="repeat(4, 1fr)" gridGap="20px" mt="20px">
+                <MDXRenderer>{data.skills.edges[0].node.body}</MDXRenderer>
+              </Grid>
+            </Box>
+            <Box>
+              <Text fontSize="24px">Technologies that I'm familiar with</Text>
+              <Grid templateColumns="repeat(4, 1fr)" gridGap="20px" mt="20px">
+                <MDXRenderer>{data.skills.edges[1].node.body}</MDXRenderer>
+              </Grid>
+            </Box>
+            <Box>
+              <Text fontSize="24px">And exploring</Text>
+              <Grid templateColumns="repeat(4, 1fr)" gridGap="20px" mt="20px">
+                <MDXRenderer>{data.skills.edges[2].node.body}</MDXRenderer>
+              </Grid>
+            </Box>
           </VStack>
         </Box>
       </Wrapper>
