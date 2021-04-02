@@ -46,7 +46,13 @@ export default function Contact() {
             </Box>
             <HStack spacing={8}>
               <ExternalLink href="www.facebook.com/t2bkun">
-                <Box bg="blue.100" borderRadius="50%" padding="6px">
+                <Box
+                  _hover={{ bg: "blue.200" }}
+                  transition="all 0.2s ease-out"
+                  bg="blue.100"
+                  borderRadius="50%"
+                  padding="6px"
+                >
                   <Icon
                     as={RiFacebookFill}
                     width="30px"
@@ -56,12 +62,24 @@ export default function Contact() {
                 </Box>
               </ExternalLink>
               <ExternalLink href="https://github.com/binhthaitrinh">
-                <Box bg="gray.200" borderRadius="50%" padding="6px">
+                <Box
+                  bg="gray.100"
+                  borderRadius="50%"
+                  padding="6px"
+                  _hover={{ bg: "gray.200" }}
+                  transition="all 0.2s ease-out"
+                >
                   <Icon as={RiGithubFill} width="30px" height="30px" />
                 </Box>
               </ExternalLink>
               <ExternalLink href="https://www.linkedin.com/in/binhthaitrinh/">
-                <Box bg="blue.100" borderRadius="50%" padding="6px">
+                <Box
+                  bg="blue.100"
+                  borderRadius="50%"
+                  padding="6px"
+                  _hover={{ bg: "blue.200" }}
+                  transition="all 0.2s ease-out"
+                >
                   <Icon
                     as={RiLinkedinFill}
                     width="30px"
