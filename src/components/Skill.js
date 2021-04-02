@@ -23,8 +23,8 @@ export default function Skill({ icon, text, color }) {
         <Icon as={icon} color={color} width="30px" height="30px" />
       </Box>
       <MotionFlex
-        whileHover={{ backgroundColor: "#F6E05E" }}
-        bg="yellow.200"
+        whileHover={{ backgroundColor: "#ECC94B" }}
+        bg="yellow.300"
         width="100%"
         height="100%"
         alignItems="center"
