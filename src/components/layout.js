@@ -14,6 +14,7 @@ import { Wrapper } from "./Wrapper"
 import { RiMailSendLine } from "react-icons/ri"
 import Skill from "./Skill"
 import { MDXProvider } from "@mdx-js/react"
+import mdxComponents from "../mdx"
 
 const shortcodes = { Skill }
 
@@ -42,7 +43,7 @@ const navs = [
 
 export default function Layout({ children }) {
   return (
-    <MDXProvider components={shortcodes}>
+    <MDXProvider components={{ ...shortcodes, ...mdxComponents }}>
       <Box as="nav" py={4}>
         <Wrapper>
           <Flex alignItems="center" justifyContent="space-between">

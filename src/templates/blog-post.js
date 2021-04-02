@@ -1,17 +1,15 @@
 import React from "react"
 import { Box } from "@chakra-ui/react"
-import { Wrapper } from "../components/Wrapper"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 export default function BlogPost({ data }) {
-  console.log(data)
   return (
-    <Wrapper>
+    <Box maxW="800px" w="100%" mx="auto" px="10px" overflow="hidden">
       <Box>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </Box>
-    </Wrapper>
+    </Box>
   )
 }
 
