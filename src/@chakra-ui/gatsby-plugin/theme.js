@@ -22,6 +22,12 @@ const theme = {
         paddingLeft: "10px",
         my: "16px",
       },
+      "ul, ol": {
+        listStylePosition: "inside",
+      },
+      a: {
+        color: "var(--chakra-colors-blue-500)",
+      },
       "p > a > code": {
         color: "var(--chakra-colors-blue-600)",
       },

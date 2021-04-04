@@ -19,7 +19,14 @@ export function SectionSub({ children }) {
 
 export function Title(props) {
   return (
-    <Text as="h1" lineHeight="3.5" my="24px" fontWeight="bold" {...props} />
+    <Text
+      as="h1"
+      lineHeight="1"
+      my="24px"
+      fontWeight="bold"
+      fontSize="40px"
+      {...props}
+    />
   )
 }
 

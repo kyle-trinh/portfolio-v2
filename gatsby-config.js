@@ -3,9 +3,27 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
-const path = require("path")
+
+const config = require("./config/website")
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: config.siteUrl,
+    title: config.siteTitle,
+    description: config.siteDescription,
+    keywords: ["Software Engineer", "Web Developer"],
+    canonicalUrl: config.siteUrl,
+    image: config.siteLogo,
+    author: {
+      name: config.author,
+      minibio: config.minibio,
+    },
+    social: {
+      facebook: config.facebook,
+      linkedin: config.linkedin,
+      github: config.github,
+    },
+  },
   /* Your site config here */
   plugins: [
     "@chakra-ui/gatsby-plugin",
