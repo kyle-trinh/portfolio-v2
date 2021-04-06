@@ -28,9 +28,10 @@ export default function Projects() {
                 relativePath
                 childImageSharp {
                   gatsbyImageData(
-                    quality: 100
+                    quality: 75
                     placeholder: BLURRED
                     height: 400
+                    width: 505
                   )
                 }
               }

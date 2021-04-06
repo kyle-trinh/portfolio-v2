@@ -61,30 +61,28 @@ export default function Nav({ variant = "dark", ...props }) {
               </Text>
             </HStack>
           </Link>
-          <UnorderedList listStyleType="none">
-            <HStack spacing={6}>
-              {navs.map(navItem => (
-                <ListItem key={navItem.title}>
-                  <Link
-                    as={GatsbyLink}
-                    to={navItem.url}
-                    fontWeight="600"
-                    textDecor="none"
-                    p="6px 12px"
-                    borderRadius={4}
-                    _hover={{
-                      textDecor: "none",
-                      backgroundColor:
-                        variant === "dark"
-                          ? "var(--chakra-colors-blue-50)"
-                          : "var(--chakra-colors-blue-400)",
-                    }}
-                  >
-                    {navItem.title}
-                  </Link>
-                </ListItem>
-              ))}
-            </HStack>
+          <UnorderedList listStyleType="none" display="flex">
+            {navs.map(navItem => (
+              <ListItem key={navItem.title}>
+                <Link
+                  as={GatsbyLink}
+                  to={navItem.url}
+                  fontWeight="600"
+                  textDecor="none"
+                  p="6px 12px"
+                  borderRadius={4}
+                  _hover={{
+                    textDecor: "none",
+                    backgroundColor:
+                      variant === "dark"
+                        ? "var(--chakra-colors-blue-50)"
+                        : "var(--chakra-colors-blue-400)",
+                  }}
+                >
+                  {navItem.title}
+                </Link>
+              </ListItem>
+            ))}
           </UnorderedList>
         </Flex>
       </Wrapper>

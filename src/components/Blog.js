@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Box, Grid, Text, Button, VStack, Tag, HStack } from "@chakra-ui/react"
+import { Box, Grid, Text, VStack, Tag, HStack } from "@chakra-ui/react"
 import Section from "./Section"
 import { SectionTitle, SectionSub } from "./Typography"
 import { Wrapper } from "./Wrapper"
@@ -99,28 +99,26 @@ export default function Blog() {
                       <Text as="time" color="gray.500">
                         {frontmatter.date}
                       </Text>
-                      <Text
-                        as="h6"
-                        fontSize="24px"
-                        fontWeight="bold"
-                        color="gray.600"
-                        lineHeight={1}
-                      >
-                        {frontmatter.title}
-                      </Text>
+                      <Link to={`/blog/${frontmatter.slug}`}>
+                        <Text
+                          as="h6"
+                          fontSize="24px"
+                          fontWeight="bold"
+                          color="gray.600"
+                          lineHeight={1}
+                        >
+                          {frontmatter.title}
+                        </Text>
+                      </Link>
                       <Text color="gray.500">By {frontmatter.author}</Text>
 
                       <Text>{excerpt}</Text>
-                      <Button colorScheme="blue">Read more</Button>
                     </VStack>
                   </Box>
                 </Box>
               )
             })}
           </Grid>
-        </Box>
-        <Box textAlign="center" mt="60px">
-          <Button colorScheme="yellow">More blog posts</Button>
         </Box>
       </Wrapper>
     </Section>

@@ -8,7 +8,7 @@ function SEO({
   postData,
   postMeta = {},
   title = postMeta.title || config.siteTitle,
-  description = postMeta.description || config.description,
+  description = postMeta.description || config.siteDescription,
   url = postMeta.slug
     ? `${siteMetadata.canonicalUrl}/${postMeta.slug}`
     : siteMetadata.canonicalUrl,
@@ -16,7 +16,7 @@ function SEO({
 }) {
   return (
     <>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: "en" }}>
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="icon" type="image/png" href="/images/logo.png" />

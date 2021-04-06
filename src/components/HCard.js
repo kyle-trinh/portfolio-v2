@@ -64,7 +64,7 @@ export default function HCard({
           <Text color="gray.500">{technologies.join(" - ")} </Text>
           <Link to={href}>
             <Button variant="outline" mt="8px">
-              Read more
+              See how I built this!
             </Button>
           </Link>
           <HStack mt="16px" spacing="16px">
@@ -100,6 +100,7 @@ export default function HCard({
             gridRow="1"
             gridColumn={index % 2 === 1 ? "1/2" : "2"}
             _hover={{ "&::after": { opacity: "60%" } }}
+            height="100%"
             position="relative"
             _after={{
               content: '""',
@@ -120,6 +121,7 @@ export default function HCard({
               alt={name}
               style={{
                 borderRadius: "20px",
+                height: "100%",
               }}
             />
             {/* <StaticImage
