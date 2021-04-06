@@ -9,7 +9,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 export default function Projects() {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      projects: allMarkdownRemark(
+      projects: allMdx(
         filter: { fileAbsolutePath: { regex: "/projects/" } }
         sort: { fields: frontmatter___id, order: ASC }
       ) {
@@ -40,9 +40,8 @@ export default function Projects() {
       }
     }
   `)
-  console.log(data)
   return (
-    <Section bg="#fafafa">
+    <Section bg="#fafafa" id="about">
       <Wrapper>
         <Box>
           <SectionTitle>Projects</SectionTitle>

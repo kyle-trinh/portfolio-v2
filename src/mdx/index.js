@@ -3,7 +3,7 @@ import React from "react"
 import { SmallTitle, Paragraph } from "../components/Typography"
 import ExternalLink from "../components/ExternalLink"
 
-export default {
+const components = {
   h1: props => (
     <Text as="h1" fontSize="48px" {...props} lineHeight="1.35" my="20px" />
   ),
@@ -16,3 +16,5 @@ export default {
     />
   ),
 }
+
+export default components

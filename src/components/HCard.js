@@ -1,16 +1,7 @@
 import React from "react"
-import {
-  Grid,
-  Box,
-  VStack,
-  Text,
-  Icon,
-  HStack,
-  Button,
-  AbsoluteCenter,
-} from "@chakra-ui/react"
+import { Grid, Box, Text, Icon, HStack, Button } from "@chakra-ui/react"
 import { motion } from "framer-motion"
-import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { FaGithub, FaLink } from "react-icons/fa"
 import ExternalLink from "./ExternalLink"
 import { Link } from "gatsby"
@@ -28,7 +19,6 @@ export default function HCard({
   index,
 }) {
   const image = getImage(cover)
-  console.log(image)
   return (
     <MotionBox
       bg="#fff"

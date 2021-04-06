@@ -19,6 +19,8 @@ function SEO({
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
+        <link rel="icon" type="image/png" href="/images/logo.png" />
+        {/* <link rel="alternate icon" href="/favicon.ico" /> */}
         {/* <meta name="image" content={image} */}
 
         {/* OpenGrpah tags */}

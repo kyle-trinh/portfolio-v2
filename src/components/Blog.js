@@ -1,16 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {
-  Box,
-  Grid,
-  Flex,
-  Text,
-  Button,
-  VStack,
-  Tag,
-  HStack,
-} from "@chakra-ui/react"
+import { Box, Grid, Text, Button, VStack, Tag, HStack } from "@chakra-ui/react"
 import Section from "./Section"
 import { SectionTitle, SectionSub } from "./Typography"
 import { Wrapper } from "./Wrapper"
