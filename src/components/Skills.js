@@ -22,7 +22,7 @@ export default function Skills() {
     }
   `)
   return (
-    <Section>
+    <Section id="skills">
       <Wrapper>
         <Box>
           <SectionTitle>Skills</SectionTitle>

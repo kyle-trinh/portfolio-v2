@@ -44,7 +44,7 @@ async function turnProjectToPages({ graphql, actions }) {
 
   result.data.allMdx.edges.forEach(({ node }) => {
     createPage({
-      path: `/project/${node.frontmatter.slug}`,
+      path: `/projects/${node.frontmatter.slug}`,
       component: path.resolve(`./src/templates/project.js`),
       context: {
         slug: node.frontmatter.slug,

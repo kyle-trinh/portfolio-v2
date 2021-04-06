@@ -28,11 +28,11 @@ const navs = [
   },
   {
     title: "Skills",
-    url: "/skills",
+    url: "/#skills",
   },
   {
-    title: "Say Hello",
-    url: "/contact",
+    title: "Blog",
+    url: "/blog",
   },
 ]
 
@@ -76,7 +76,7 @@ export default function Nav({ variant = "dark", ...props }) {
                       textDecor: "none",
                       backgroundColor:
                         variant === "dark"
-                          ? "var(--chakra-colors-blue-100)"
+                          ? "var(--chakra-colors-blue-50)"
                           : "var(--chakra-colors-blue-400)",
                     }}
                   >

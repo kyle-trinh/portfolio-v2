@@ -8,12 +8,18 @@ import { FaGithub, FaLink } from "react-icons/fa"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import mdxComponents from "../mdx"
 import { MDXProvider } from "@mdx-js/react"
+import SEO from "../components/seo"
 
 export default function Project({ data }) {
   const image = getImage(data.mdx.frontmatter.mockup)
 
   return (
     <MDXProvider components={mdxComponents}>
+      <SEO
+        postMeta={{
+          title: `${data.mdx.frontmatter.name} | Binh Trinh Project`,
+        }}
+      />
       <Box>
         <Box bg="blue.500" color="white" pb="36px">
           <Box w="100%" mx="auto" overflow="hidden" maxW="960px">
