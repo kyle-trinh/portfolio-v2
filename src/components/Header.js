@@ -4,6 +4,7 @@ import { Wrapper } from "./Wrapper"
 import { Box, VStack, Text, Button } from "@chakra-ui/react"
 import { Link } from "gatsby"
 import { motion } from "framer-motion"
+import { Title, Paragraph } from "./Typography"
 
 const MotionBox = motion(Box)
 
@@ -21,10 +22,10 @@ export default function Header() {
           mx="auto"
           w="100%"
           maxW="700px"
-          spacing="16px"
+          spacing={["8px", "16px"]}
           alignItems="center"
         >
-          <Box>
+          <Box width="35%">
             <StaticImage
               src="../assets/images/profile.png"
               alt="binh trinh"
@@ -35,19 +36,19 @@ export default function Header() {
               quality={100}
             />
           </Box>
-          <Text fontSize="18px">Hi, I'm Binh</Text>
-          <Box textStyle="h1" as="h1">
+          <Paragraph textAlign="center">Hi, I'm Binh</Paragraph>
+          <Title>
             A Full-stack Javascript <br></br> Web Developer
-          </Box>
+          </Title>
           <Box>
-            <Text fontSize="18px">
+            <Paragraph textAlign="center">
               with an eye for clean aesthetics and optimal <br></br> User
               Experience via intuitive design.
-            </Text>
-            <Text fontSize="18px">
+            </Paragraph>
+            <Paragraph textAlign="center">
               I have experience in MongoDB, Express.js, React.js, Node.js (MERN)
               stack
-            </Text>
+            </Paragraph>
           </Box>
           <Link to="/blog">
             <Button colorScheme="blue">Connect with me!</Button>

@@ -1,12 +1,16 @@
 import { Text } from "@chakra-ui/react"
 import React from "react"
-import { SmallTitle, Paragraph } from "../components/Typography"
+import {
+  SmallTitle,
+  Paragraph,
+  Title,
+  SubTitle,
+} from "../components/Typography"
 import ExternalLink from "../components/ExternalLink"
 
 const components = {
-  h1: props => (
-    <Text as="h1" fontSize="48px" {...props} lineHeight="1.35" my="20px" />
-  ),
+  h1: props => <Title {...props} />,
+  h2: props => <SubTitle {...props} />,
   h3: props => <SmallTitle {...props} />,
   p: props => <Paragraph {...props} />,
   a: props => (

@@ -39,7 +39,7 @@ export default function Blog() {
         </Box>
         <Box>
           <Grid
-            gridTemplateColumns="repeat(4, 1fr)"
+            gridTemplateColumns="repeat(auto-fit, minmax(240px, 310px))"
             gridGap="20px"
             gridAutoRows="1fr"
             gridTemplateRows="1fr"
@@ -50,7 +50,6 @@ export default function Blog() {
               return (
                 <Box
                   key={frontmatter.slug}
-                  gridRow="1/2"
                   display="flex"
                   flexDir="column"
                   alignItems="flex-start"
@@ -76,6 +75,7 @@ export default function Blog() {
                     borderBottomRightRadius="8px"
                     borderBottomLeftRadius="8px"
                     height="100%"
+                    width="100%"
                   >
                     <VStack
                       alignItems="flex-start"
@@ -83,18 +83,19 @@ export default function Blog() {
                       justifyContent="stretch"
                     >
                       <HStack flexWrap="wrap">
-                        {frontmatter.keywords.map(tag => (
-                          <Tag
-                            size="md"
-                            key={tag}
-                            variant="outline"
-                            colorScheme="blue"
-                            whiteSpace="nowrap"
-                            mb="6px"
-                          >
-                            {tag}
-                          </Tag>
-                        ))}
+                        {frontmatter.keywrds &&
+                          frontmatter.keywords.map(tag => (
+                            <Tag
+                              size="md"
+                              key={tag}
+                              variant="outline"
+                              colorScheme="blue"
+                              whiteSpace="nowrap"
+                              mb="6px"
+                            >
+                              {tag}
+                            </Tag>
+                          ))}
                       </HStack>
                       <Text as="time" color="gray.500">
                         {frontmatter.date}
