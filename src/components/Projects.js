@@ -48,7 +48,7 @@ export default function Projects() {
           <SectionTitle>Projects</SectionTitle>
           <SectionSub>I build projects to showcase what I learned</SectionSub>
         </Box>
-        <VStack spacing={8} mt={8}>
+        <VStack mt={8} spacing={8}>
           {data.projects.edges.map((edge, index) => {
             const project = edge.node.frontmatter
             return (

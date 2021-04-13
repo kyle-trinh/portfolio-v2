@@ -22,7 +22,7 @@ export default function HCard({
   return (
     <MotionBox
       bg="#fff"
-      height="400px"
+      // height={["auto", "400px"]}
       borderRadius="3xl"
       border="2px solid #f6f6f6"
       width="100%"
@@ -31,18 +31,25 @@ export default function HCard({
     >
       <Grid
         width="100%"
-        gridTemplateColumns="repeat(2, 1fr)"
-        gridTemplateRows="1fr"
+        gridTemplateColumns={["1fr", "repeat(2, 1fr)"]}
+        gridTemplateRows={["repeat(5, 1fr)", "1fr"]}
         height="100%"
-        gridGap="80px"
+        gridGap={["0px", "0px", "0px", "80px"]}
       >
         <Box
-          gridColumn={index % 2 === 0 ? "1/2" : "2"}
-          gridRow="1"
+          gridColumn={["1/-1", index % 2 === 0 ? "1/2" : "2"]}
+          gridRow={["3/-1", "1"]}
           display="flex"
           flexDirection="column"
           justifyContent="center"
-          paddingLeft={index % 2 === 0 ? "60px" : "0"}
+          paddingLeft={["20px", "25px", "25px", index % 2 === 0 ? "60px" : "0"]}
+          paddingRight={[
+            "20px",
+            "25px",
+            "25px",
+            index % 2 === 0 ? "0" : "60px",
+          ]}
+          py="20px"
         >
           <Link to={href}>
             <Text
@@ -90,41 +97,42 @@ export default function HCard({
             </ExternalLink>
           </HStack>
         </Box>
-        <Link to={href}>
-          <Box
-            display="flex"
-            justifyContent="flex-end"
-            alignItems="center"
-            bg="gray.200"
-            borderRadius="3xl"
-            gridRow="1"
-            gridColumn={index % 2 === 1 ? "1/2" : "2"}
-            _hover={{ "&::after": { opacity: "60%" } }}
-            height="100%"
-            position="relative"
-            _after={{
-              content: '""',
-              position: "absolute",
-              zIndex: 8,
+        <Box
+          display="flex"
+          as={Link}
+          to={href}
+          justifyContent="flex-end"
+          alignItems="center"
+          bg="gray.200"
+          borderRadius="3xl"
+          gridRow={["1/3", "1"]}
+          gridColumn={["1/-1", index % 2 === 1 ? "1/2" : "2"]}
+          _hover={{ "&::after": { opacity: "60%" } }}
+          height="100%"
+          position="relative"
+          _after={{
+            content: '""',
+            position: "absolute",
+            zIndex: 8,
+            height: "100%",
+            width: "100%",
+            top: 0,
+            left: 0,
+            backgroundColor: "blue.400",
+            transition: "all 0.5s ease-out",
+            borderRadius: "3xl",
+            opacity: 0,
+          }}
+        >
+          <GatsbyImage
+            image={image}
+            alt={name}
+            style={{
+              borderRadius: "20px",
               height: "100%",
-              width: "100%",
-              top: 0,
-              left: 0,
-              backgroundColor: "blue.400",
-              transition: "all 0.5s ease-out",
-              borderRadius: "3xl",
-              opacity: 0,
             }}
-          >
-            <GatsbyImage
-              image={image}
-              alt={name}
-              style={{
-                borderRadius: "20px",
-                height: "100%",
-              }}
-            />
-            {/* <StaticImage
+          />
+          {/* <StaticImage
               src={`../../content/${cover}`}
               alt="binh trinh"
               placeholder="blurred"
@@ -134,8 +142,7 @@ export default function HCard({
               quality={100}
               style={{ borderRadius: "20px" }}
             /> */}
-          </Box>
-        </Link>
+        </Box>
       </Grid>
     </MotionBox>
   )
