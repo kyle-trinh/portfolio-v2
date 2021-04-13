@@ -22,10 +22,10 @@ export default function Header() {
           mx="auto"
           w="100%"
           maxW="700px"
-          spacing={["8px", "16px"]}
+          spacing={["8px", "8px", "2px", "8px"]}
           alignItems="center"
         >
-          <Box width="35%">
+          <Box width={["30%", "25%", "15%", "25%"]}>
             <StaticImage
               src="../assets/images/profile.png"
               alt="binh trinh"
@@ -36,14 +36,16 @@ export default function Header() {
               quality={100}
             />
           </Box>
-          <Paragraph textAlign="center">Hi, I'm Binh</Paragraph>
-          <Title>
+          <Paragraph textAlign="center" fontSize={["16px", "24px"]}>
+            Hi, I'm Binh
+          </Paragraph>
+          <Title my="0px">
             A Full-stack Javascript <br></br> Web Developer
           </Title>
           <Box>
             <Paragraph textAlign="center">
-              with an eye for clean aesthetics and optimal <br></br> User
-              Experience via intuitive design.
+              with an eye for clean aesthetics and optimal User Experience via
+              intuitive design.
             </Paragraph>
             <Paragraph textAlign="center">
               I have experience in MongoDB, Express.js, React.js, Node.js (MERN)
@@ -60,6 +62,7 @@ export default function Header() {
         bottom={0}
         left="50%"
         transform="translateX(-50%)"
+        display={["none", "block"]}
       >
         <Box
           height="60px"

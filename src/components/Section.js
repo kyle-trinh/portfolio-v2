@@ -6,7 +6,7 @@ export default function Section(props) {
     <Box
       as="section"
       padding="100px 0px"
-      borderTop={`1px solid blue.100`}
+      borderTop={`1px solid var(--chakra-colors-gray-200)`}
       {...props}
     />
   )

@@ -7,6 +7,7 @@ import {
   Link,
   Text,
   HStack,
+  VStack,
   Icon,
 } from "@chakra-ui/react"
 import { Link as GatsbyLink } from "gatsby"
@@ -37,6 +38,7 @@ const navs = [
 ]
 
 export default function Nav({ variant = "dark", ...props }) {
+  const [showMenu, setShowMenu] = React.useState(false)
   return (
     <Box
       as="nav"
@@ -46,7 +48,7 @@ export default function Nav({ variant = "dark", ...props }) {
     >
       <Wrapper>
         <Flex alignItems="center" justifyContent="space-between">
-          <Link href="mailto:trinhthaibinh.ecom@gmail.com">
+          <Link href="mailto:trinhthaibinh.ecom@gmail.com" zIndex="1000">
             <HStack>
               <Icon
                 as={RiMailSendLine}
@@ -56,20 +58,81 @@ export default function Nav({ variant = "dark", ...props }) {
                 borderRadius="50%"
                 padding="8px 8px"
               />
-              <Text fontWeight="600" marginLeft={6} display="inline-block">
+              <Text
+                fontWeight="600"
+                marginLeft={6}
+                display={["none", "inline-block"]}
+              >
                 trinhthaibinh.ecom@gmail.com
               </Text>
             </HStack>
           </Link>
-          <UnorderedList listStyleType="none" display="flex">
+          <Box
+            position="absolute"
+            top="25px"
+            right="25px"
+            display={["block", "none"]}
+            onClick={() => setShowMenu(show => !show)}
+            zIndex="1000"
+          >
+            <VStack spacing="4px">
+              <Box
+                width="24px"
+                height="3px"
+                bg={showMenu ? "white" : "gray.600"}
+                transform={
+                  !showMenu ? "" : "rotate(-45deg) translate(-2px, 4px)"
+                }
+                transition="all 0.2s ease-out"
+              ></Box>
+              <Box
+                width="24px"
+                height="3px"
+                bg="gray.600"
+                visibility={showMenu ? "hidden" : "visible"}
+              ></Box>
+              <Box
+                width="24px"
+                height="3px"
+                bg={showMenu ? "white" : "gray.600"}
+                transform={
+                  showMenu ? "rotate(45deg) translate(-3px, -4px)" : ""
+                }
+                transition="all 0.2s ease-out"
+              ></Box>
+            </VStack>
+          </Box>
+          <UnorderedList
+            listStyleType="none"
+            display="flex"
+            flexDirection={["column", "row"]}
+            justifyContent={["center", "flex-end"]}
+            alignItems="flex-end"
+            position={["absolute", "relative"]}
+            height={["100vh", "auto"]}
+            width="min(80%, 400px)"
+            bg={["blue.500", "transparent"]}
+            color={["white", "gray.600"]}
+            top={["0", "auto"]}
+            transform={[`translateX(${showMenu ? "0px" : "50vw"})`, "none"]}
+            transition="all 0.3s ease-out"
+            visibility={[showMenu ? "visible" : "hidden", "visible"]}
+            opacity={[showMenu ? "100%" : "0%", "100%"]}
+            right={["0", "auto"]}
+            ml="0"
+            zIndex="999"
+            py="8px"
+            pr={["30px", "0px"]}
+          >
             {navs.map(navItem => (
-              <ListItem key={navItem.title}>
+              <ListItem key={navItem.title} mb={["24px", "0px"]}>
                 <Link
                   as={GatsbyLink}
                   to={navItem.url}
                   fontWeight="600"
                   textDecor="none"
-                  p="6px 12px"
+                  p={["0px", "0px", "2px 8px", "6px 12px"]}
+                  height="100%"
                   borderRadius={4}
                   _hover={{
                     textDecor: "none",
@@ -83,6 +146,20 @@ export default function Nav({ variant = "dark", ...props }) {
                 </Link>
               </ListItem>
             ))}
+            <ListItem key="resume">
+              <Link
+                href="/resume.pdf"
+                border={[
+                  "2px solid white",
+                  "1px solid var(--chakra-colors-gray-600)",
+                ]}
+                padding="8px 10px"
+                fontWeight="600"
+                borderRadius="md"
+              >
+                Resume
+              </Link>
+            </ListItem>
           </UnorderedList>
         </Flex>
       </Wrapper>

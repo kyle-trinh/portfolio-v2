@@ -22,9 +22,9 @@ export function Title(props) {
     <Text
       as="h1"
       lineHeight="1"
-      my={["8px", "24px"]}
+      my={["8px", "16px", "24px"]}
       fontWeight="bold"
-      fontSize={["32px", "64px"]}
+      fontSize={["32px", "32px", "48px", "64px"]}
       {...props}
     />
   )
@@ -38,6 +38,7 @@ export function SubTitle(props) {
       fontWeight="bold"
       lineHeight="1.1"
       fontSize="48px"
+      my={["24px"]}
       {...props}
     />
   )
@@ -48,9 +49,10 @@ export function SmallTitle(props) {
     <Text
       as="h3"
       textAlign="left"
-      my="24px"
+      my="16px"
       fontSize="32px"
       fontWeight="bold"
+      color="gray.600"
       {...props}
     />
   )
@@ -62,7 +64,7 @@ export function Paragraph(props) {
       textAlign="left"
       lineHeight="1.6"
       fontSize="16px"
-      my={["0px", "16px"]}
+      my={["0px", "8px"]}
       {...props}
     />
   )
