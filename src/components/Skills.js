@@ -41,19 +41,31 @@ export default function Skills() {
           >
             <Box>
               <Text fontSize="24px">Technologies that I'm proficient in</Text>
-              <Grid templateColumns="repeat(4, 1fr)" gridGap="20px" mt="20px">
+              <Grid
+                templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+                gridGap="20px"
+                mt="20px"
+              >
                 <MDXRenderer>{data.skills.edges[0].node.body}</MDXRenderer>
               </Grid>
             </Box>
             <Box>
               <Text fontSize="24px">Technologies that I'm familiar with</Text>
-              <Grid templateColumns="repeat(4, 1fr)" gridGap="20px" mt="20px">
+              <Grid
+                templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+                gridGap="20px"
+                mt="20px"
+              >
                 <MDXRenderer>{data.skills.edges[1].node.body}</MDXRenderer>
               </Grid>
             </Box>
             <Box>
               <Text fontSize="24px">And exploring</Text>
-              <Grid templateColumns="repeat(4, 1fr)" gridGap="20px" mt="20px">
+              <Grid
+                templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+                gridGap="20px"
+                mt="20px"
+              >
                 <MDXRenderer>{data.skills.edges[2].node.body}</MDXRenderer>
               </Grid>
             </Box>

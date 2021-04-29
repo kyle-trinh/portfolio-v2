@@ -112,7 +112,7 @@ export default function Nav({ variant = "dark", ...props }) {
             height={["100vh", "auto"]}
             width="min(80%, 400px)"
             bg={["blue.500", "transparent"]}
-            color={["white", "gray.600"]}
+            color={["white", variant === "light" ? "white" : "gray.600"]}
             top={["0", "auto"]}
             transform={[`translateX(${showMenu ? "0px" : "50vw"})`, "none"]}
             transition="all 0.3s ease-out"
@@ -150,8 +150,12 @@ export default function Nav({ variant = "dark", ...props }) {
               <Link
                 href="/resume.pdf"
                 border={[
-                  "2px solid white",
-                  "1px solid var(--chakra-colors-gray-600)",
+                  `2px solid white`,
+                  `1px solid ${
+                    variant === "light"
+                      ? "white"
+                      : "var(--chakra-colors-gray-600)"
+                  }`,
                 ]}
                 padding="8px 10px"
                 fontWeight="600"

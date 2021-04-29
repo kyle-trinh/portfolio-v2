@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Box, Grid, Text, VStack, Tag, HStack } from "@chakra-ui/react"
+import { Box, Grid, Text, VStack, Tag, HStack, Tooltip } from "@chakra-ui/react"
 import Section from "./Section"
 import { SectionTitle, SectionSub } from "./Typography"
 import { Wrapper } from "./Wrapper"
@@ -37,45 +37,40 @@ export default function Blog() {
           <SectionTitle>Blog Posts</SectionTitle>
           <SectionSub>This is where I write blogs</SectionSub>
         </Box>
-        <Box>
+        <Box mt="16px">
           <Grid
-            gridTemplateColumns="repeat(auto-fit, minmax(240px, 310px))"
+            gridTemplateColumns="repeat(auto-fill, minmax(250px, 1fr))"
             gridGap="20px"
             gridAutoRows="1fr"
-            gridTemplateRows="1fr"
           >
             {data.blogs.edges.map(edge => {
               const { frontmatter, excerpt } = edge.node
               const image = getImage(frontmatter.banner)
               return (
-                <Box
+                <VStack
                   key={frontmatter.slug}
-                  display="flex"
-                  flexDir="column"
                   alignItems="flex-start"
+                  spacing="0"
                 >
-                  <Box height="200px">
-                    <Link to={`/blog/${frontmatter.slug}`}>
-                      <GatsbyImage
-                        image={image}
-                        alt={frontmatter.title}
-                        style={{
-                          objectFit: "cover",
-                          height: "100%",
-                          borderTopRightRadius: "8px",
-                          borderTopLeftRadius: "8px",
-                        }}
-                      />
-                    </Link>
-                  </Box>
+                  <Link to={`/blog/${frontmatter.slug}`}>
+                    <GatsbyImage
+                      image={image}
+                      alt={frontmatter.title}
+                      style={{
+                        objectFit: "cover",
+                        height: "100%",
+                        borderTopRightRadius: "8px",
+                        borderTopLeftRadius: "8px",
+                      }}
+                    />
+                  </Link>
                   <Box
                     borderWidth="1px"
                     borderColor="gray.200"
-                    padding="16px 12px"
+                    padding="16px 12px 20px 12px"
                     borderBottomRightRadius="8px"
                     borderBottomLeftRadius="8px"
                     height="100%"
-                    width="100%"
                   >
                     <VStack
                       alignItems="flex-start"
@@ -83,13 +78,13 @@ export default function Blog() {
                       justifyContent="stretch"
                     >
                       <HStack flexWrap="wrap">
-                        {frontmatter.keywrds &&
+                        {frontmatter.keywords &&
                           frontmatter.keywords.map(tag => (
                             <Tag
                               size="md"
                               key={tag}
                               variant="outline"
-                              colorScheme="blue"
+                              colorScheme="gray"
                               whiteSpace="nowrap"
                               mb="6px"
                             >
@@ -108,7 +103,16 @@ export default function Blog() {
                           color="gray.600"
                           lineHeight={1}
                         >
-                          {frontmatter.title}
+                          <Tooltip
+                            label={frontmatter.title}
+                            isDisabled={frontmatter.title.length <= 30}
+                            hasArrow
+                            placement="top"
+                          >
+                            {frontmatter.title.length > 30
+                              ? `${frontmatter.title.slice(0, 30)}...`
+                              : frontmatter.title}
+                          </Tooltip>
                         </Text>
                       </Link>
                       <Text color="gray.500">By {frontmatter.author}</Text>
@@ -116,7 +120,7 @@ export default function Blog() {
                       <Text>{excerpt}</Text>
                     </VStack>
                   </Box>
-                </Box>
+                </VStack>
               )
             })}
           </Grid>

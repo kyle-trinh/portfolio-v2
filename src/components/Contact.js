@@ -1,5 +1,13 @@
 import React from "react"
-import { Box, HStack, Text, Button, VStack, Icon } from "@chakra-ui/react"
+import {
+  Box,
+  HStack,
+  Text,
+  Button,
+  VStack,
+  Icon,
+  Stack,
+} from "@chakra-ui/react"
 import { RiLinkedinFill, RiFacebookFill, RiGithubFill } from "react-icons/ri"
 import { Wrapper } from "./Wrapper"
 import Section from "./Section"
@@ -10,15 +18,17 @@ export default function Contact() {
     <Section>
       <Wrapper>
         <Box>
-          <HStack
+          <Stack
+            direction={["column", "column", "column", "row"]}
             bg="blue.700"
             color="white"
             borderRadius="2xl"
             padding="30px 60px"
             justifyContent="space-between"
             alignItems="center"
+            spacing={["8px", 0]}
           >
-            <Box>
+            <Box textAlign={["center", "left"]}>
               <Text fontSize="32px" fontWeight="bold" color="yellow.300">
                 Work Inquiry
               </Text>
@@ -33,7 +43,7 @@ export default function Contact() {
             <a href="mailto:trinhthaibinh.ecom@gmail.com">
               <Button colorScheme="yellow">LET'S CHAT</Button>
             </a>
-          </HStack>
+          </Stack>
         </Box>
         <Box>
           <VStack spacing="60px" mt="60px" textAlign="center">
