@@ -112,7 +112,11 @@ export default function Nav({ variant = "dark", ...props }) {
           <Stack
             as={UnorderedList}
             listStyleType="none"
-            display="flex"
+            display={[
+              showMenu ? "flex" : "none",
+              showMenu ? "flex" : "none",
+              "flex",
+            ]}
             direction={["column", "row"]}
             justifyContent={["center", "flex-end"]}
             boxShadow={showMenu && "-2px -2px 10px rgba(0,0,0,0.2)"}

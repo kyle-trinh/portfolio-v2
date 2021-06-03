@@ -48,13 +48,16 @@ export default function Project({ data }) {
                 </HStack>
               </Box>
               <Box w={["100%", "350px"]} flex="0 0 auto">
-                <GatsbyImage image={image} />
+                <GatsbyImage
+                  image={image}
+                  alt={`${data.mdx.frontmatter.name} image`}
+                />
               </Box>
             </Stack>
           </Box>
         </Box>
         <Box py="24px">
-          <Box width="100%" maxW="960px" overflow="hidden" mx="auto">
+          <Box width="100%" maxW="960px" overflow="hidden" mx="auto" px="10px">
             <MDXRenderer>{data.mdx.body}</MDXRenderer>
           </Box>
         </Box>
