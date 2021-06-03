@@ -8,6 +8,7 @@ import Markdown from "react-markdown"
 import { MDXProvider } from "@mdx-js/react"
 import mdxComponents from "../mdx"
 import Nav from "../components/Nav"
+import Contact from "../components/Contact"
 
 export default function BlogPost({ data }) {
   const image = getImage(data.mdx.frontmatter.banner)
@@ -35,6 +36,7 @@ export default function BlogPost({ data }) {
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
         </Box>
       </Box>
+      <Contact />
     </MDXProvider>
   )
 }

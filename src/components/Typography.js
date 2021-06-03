@@ -37,8 +37,8 @@ export function SubTitle(props) {
       textAlign="left"
       fontWeight="bold"
       lineHeight="1.1"
-      fontSize="48px"
-      my={["24px"]}
+      fontSize={["24px", "24px", "48px"]}
+      my={["16px", "16px", "24px"]}
       {...props}
     />
   )
@@ -50,7 +50,7 @@ export function SmallTitle(props) {
       as="h3"
       textAlign="left"
       my="16px"
-      fontSize="32px"
+      fontSize={["20px", "20px", "32px"]}
       fontWeight="bold"
       color="gray.600"
       {...props}

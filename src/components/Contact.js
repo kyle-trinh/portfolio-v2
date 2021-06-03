@@ -51,7 +51,7 @@ export default function Contact() {
               <Text fontSize="32px" fontWeight="bold" mb="8px">
                 Stay Connected
               </Text>
-              <Text color="gray.500">Fountain Valley, CA</Text>
+              <Text color="gray.500">Long Beach, CA</Text>
               <Text>trinhthaibinh.ecom@gmail.com</Text>
             </Box>
             <HStack spacing={8}>
@@ -73,13 +73,18 @@ export default function Contact() {
               </ExternalLink>
               <ExternalLink href="https://github.com/binhthaitrinh">
                 <Box
-                  bg="gray.100"
+                  bg="blue.100"
                   borderRadius="50%"
                   padding="6px"
-                  _hover={{ bg: "gray.200" }}
+                  _hover={{ bg: "blue.200" }}
                   transition="all 0.2s ease-out"
                 >
-                  <Icon as={RiGithubFill} width="30px" height="30px" />
+                  <Icon
+                    as={RiGithubFill}
+                    width="30px"
+                    height="30px"
+                    color="blue.600"
+                  />
                 </Box>
               </ExternalLink>
               <ExternalLink href="https://www.linkedin.com/in/binhthaitrinh/">

@@ -9,6 +9,7 @@ import {
   HStack,
   VStack,
   Icon,
+  Stack,
 } from "@chakra-ui/react"
 import { Link as GatsbyLink } from "gatsby"
 import { Wrapper } from "./Wrapper"
@@ -79,34 +80,42 @@ export default function Nav({ variant = "dark", ...props }) {
               <Box
                 width="24px"
                 height="3px"
-                bg={showMenu ? "white" : "gray.600"}
+                bg={
+                  variant !== "dark" ? "white" : showMenu ? "white" : "gray.600"
+                }
                 transform={
-                  !showMenu ? "" : "rotate(-45deg) translate(-2px, 4px)"
+                  !showMenu ? "" : "rotate(-45deg) translate(-4px, 4px)"
                 }
                 transition="all 0.2s ease-out"
               ></Box>
               <Box
                 width="24px"
                 height="3px"
-                bg="gray.600"
+                bg={
+                  variant !== "dark" ? "white" : showMenu ? "white" : "gray.600"
+                }
                 visibility={showMenu ? "hidden" : "visible"}
               ></Box>
               <Box
                 width="24px"
                 height="3px"
-                bg={showMenu ? "white" : "gray.600"}
+                bg={
+                  variant !== "dark" ? "white" : showMenu ? "white" : "gray.600"
+                }
                 transform={
-                  showMenu ? "rotate(45deg) translate(-3px, -4px)" : ""
+                  showMenu ? "rotate(45deg) translate(-5px, -6px)" : ""
                 }
                 transition="all 0.2s ease-out"
               ></Box>
             </VStack>
           </Box>
-          <UnorderedList
+          <Stack
+            as={UnorderedList}
             listStyleType="none"
             display="flex"
-            flexDirection={["column", "row"]}
+            direction={["column", "row"]}
             justifyContent={["center", "flex-end"]}
+            boxShadow={showMenu && "-2px -2px 10px rgba(0,0,0,0.2)"}
             alignItems="flex-end"
             position={["absolute", "relative"]}
             height={["100vh", "auto"]}
@@ -131,15 +140,16 @@ export default function Nav({ variant = "dark", ...props }) {
                   to={navItem.url}
                   fontWeight="600"
                   textDecor="none"
-                  p={["0px", "0px", "2px 8px", "6px 12px"]}
+                  p={["2px 8px", "2px 8px", "2px 8px", "6px 12px"]}
                   height="100%"
                   borderRadius={4}
                   _hover={{
                     textDecor: "none",
-                    backgroundColor:
-                      variant === "dark"
-                        ? "var(--chakra-colors-blue-50)"
-                        : "var(--chakra-colors-blue-400)",
+                    backgroundColor: showMenu
+                      ? "var(--chakra-colors-blue-400)"
+                      : variant === "dark"
+                      ? "var(--chakra-colors-blue-50)"
+                      : "var(--chakra-colors-blue-400)",
                   }}
                 >
                   {navItem.title}
@@ -164,7 +174,7 @@ export default function Nav({ variant = "dark", ...props }) {
                 Resume
               </Link>
             </ListItem>
-          </UnorderedList>
+          </Stack>
         </Flex>
       </Wrapper>
     </Box>
