@@ -10,6 +10,7 @@ import mdxComponents from "../mdx"
 import { MDXProvider } from "@mdx-js/react"
 import SEO from "../components/seo"
 import Contact from "../components/Contact"
+import ExternalLink from "../components/ExternalLink"
 
 export default function Project({ data }) {
   const image = getImage(data.mdx.frontmatter.mockup)
@@ -18,7 +19,7 @@ export default function Project({ data }) {
     <MDXProvider components={mdxComponents}>
       <SEO
         postMeta={{
-          title: `${data.mdx.frontmatter.name} | Binh Trinh Project`,
+          title: `${data.mdx.frontmatter.name} | My Personal Project`,
         }}
       />
       <Box>
@@ -28,22 +29,37 @@ export default function Project({ data }) {
             <Stack
               direction={["column", "row"]}
               justifyContent="space-between"
+              alignItems="center"
               spacing="72px"
             >
               <Box>
                 <Title>{data.mdx.frontmatter.name}</Title>
-                <Stack direction={["column", "row"]} mt={["16px"]}>
+                <HStack
+                  // direction={["column", "row"]}
+                  mt={["16px"]}
+                  flexWrap="wrap"
+                  alignItems="flex-start"
+                  justifyContent="flex-start"
+                >
                   {data.mdx.frontmatter.tech.map(item => (
-                    <Tag bg="white" color="gray.600">
+                    <Tag bg="white" color="gray.600" mb={2}>
                       {item}
                     </Tag>
                   ))}
-                </Stack>
+                </HStack>
                 <Paragraph my={["8px"]}>
                   {data.mdx.frontmatter.description}
                 </Paragraph>
                 <HStack spacing="24px">
-                  <Icon as={FaGithub} width="32px" height="32px" />
+                  <ExternalLink href="/">
+                    <Icon
+                      as={FaGithub}
+                      width="32px"
+                      height="32px"
+                      color="white"
+                      _hover={{ color: "yellow.200" }}
+                    />
+                  </ExternalLink>
                   <Icon as={FaLink} width="32px" height="32px" />
                 </HStack>
               </Box>
@@ -57,9 +73,17 @@ export default function Project({ data }) {
           </Box>
         </Box>
         <Box py="24px">
-          <Box width="100%" maxW="960px" overflow="hidden" mx="auto" px="10px">
-            <MDXRenderer>{data.mdx.body}</MDXRenderer>
-          </Box>
+          <article>
+            <Box
+              width="100%"
+              maxW="800px"
+              overflow="hidden"
+              mx="auto"
+              px="10px"
+            >
+              <MDXRenderer>{data.mdx.body}</MDXRenderer>
+            </Box>
+          </article>
         </Box>
       </Box>
       <Contact />

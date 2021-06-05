@@ -31,6 +31,19 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Binh Trinh's Portfolio`,
+        short_name: `BT Portfolio`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `rgb(49,130,206)`,
+        display: `standalone`,
+        icon: `static/images/logo.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,

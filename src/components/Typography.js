@@ -64,7 +64,8 @@ export function Paragraph(props) {
       textAlign="left"
       lineHeight="1.6"
       fontSize="16px"
-      my={["0px", "8px"]}
+      my={["0px", "10px"]}
+      style={{ textIndent: "1.6rem" }}
       {...props}
     />
   )
