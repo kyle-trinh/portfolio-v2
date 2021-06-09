@@ -40,7 +40,7 @@ export default function Skills() {
             spacing="20px"
           >
             <Box>
-              <Text fontSize="24px">Technologies that I'm proficient in</Text>
+              <Text fontSize="24px">Languages</Text>
               <Grid
                 templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
                 gridGap="20px"
@@ -50,7 +50,7 @@ export default function Skills() {
               </Grid>
             </Box>
             <Box>
-              <Text fontSize="24px">Technologies that I'm familiar with</Text>
+              <Text fontSize="24px">Technologies</Text>
               <Grid
                 templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
                 gridGap="20px"
@@ -60,13 +60,23 @@ export default function Skills() {
               </Grid>
             </Box>
             <Box>
-              <Text fontSize="24px">And exploring</Text>
+              <Text fontSize="24px">Working knowledge of</Text>
               <Grid
                 templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
                 gridGap="20px"
                 mt="20px"
               >
                 <MDXRenderer>{data.skills.edges[2].node.body}</MDXRenderer>
+              </Grid>
+            </Box>
+            <Box>
+              <Text fontSize="24px">Exploring</Text>
+              <Grid
+                templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+                gridGap="20px"
+                mt="20px"
+              >
+                <MDXRenderer>{data.skills.edges[3].node.body}</MDXRenderer>
               </Grid>
             </Box>
           </VStack>
