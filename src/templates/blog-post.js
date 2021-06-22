@@ -9,11 +9,13 @@ import { MDXProvider } from "@mdx-js/react"
 import mdxComponents from "../mdx"
 import Nav from "../components/Nav"
 import Contact from "../components/Contact"
+import Seo from "../components/seo"
 
 export default function BlogPost({ data }) {
   const image = getImage(data.mdx.frontmatter.banner)
   return (
     <MDXProvider components={mdxComponents}>
+      <Seo title={`${data.mdx.frontmatter.title} | Blog`} />
       <Nav />
       <Box
         maxW="800px"

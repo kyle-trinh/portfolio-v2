@@ -1,5 +1,5 @@
 module.exports = {
-  siteTitle: "Binh Trinh | Personal website",
+  siteTitle: "Binh Trinh",
   siteTitleAlt: "The personal website of Binh Trinh",
   siteTitleShort: "binhtrinh",
   siteUrl: process.env.ROOT_URL || "https://binhtrinh.dev",

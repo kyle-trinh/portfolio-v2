@@ -18,9 +18,8 @@ export default function Project({ data }) {
   return (
     <MDXProvider components={mdxComponents}>
       <SEO
-        postMeta={{
-          title: `${data.mdx.frontmatter.name} | My Personal Project`,
-        }}
+        title={`${data.mdx.frontmatter.name} | Personal Project`}
+        description={data.mdx.frontmatter.description}
       />
       <Box>
         <Box bg="blue.500" color="white" pb="36px" px="15px">
