@@ -1,14 +1,13 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import config from "../../../config/website"
 
 function SEO({
   siteMetadata,
   postData,
   postMeta = {},
-  title = postMeta.title || config.siteTitle,
-  description = postMeta.description || config.siteDescription,
+  title = postMeta.title || siteMetadata.title,
+  description = postMeta.description || siteMetadata.description,
   url = postMeta.slug
     ? `${siteMetadata.canonicalUrl}/${postMeta.slug}`
     : siteMetadata.canonicalUrl,
@@ -29,7 +28,7 @@ function SEO({
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content="/images/metaImage.jpg" />
-        <meta property="og:url" content="https://www.binhtrinh.dev" />
+        <meta property="og:url" content={url} />
         <meta property="twitter:tittle" content={title} />
         <meta property="twitter:description" content={description} />
       </Helmet>
@@ -60,7 +59,7 @@ function SEOWithQuery(props) {
     }
   `)
 
-  return <SEO siteMetadata={site} {...props} />
+  return <SEO siteMetadata={site.siteMetadata} {...props} />
 }
 
 export default SEOWithQuery
