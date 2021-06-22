@@ -51,7 +51,7 @@ export default function Project({ data }) {
                   {data.mdx.frontmatter.description}
                 </Paragraph>
                 <HStack spacing="24px">
-                  <ExternalLink href="/">
+                  <ExternalLink href={data.mdx.frontmatter.github}>
                     <Icon
                       as={FaGithub}
                       width="32px"
@@ -60,7 +60,15 @@ export default function Project({ data }) {
                       _hover={{ color: "yellow.200" }}
                     />
                   </ExternalLink>
-                  <Icon as={FaLink} width="32px" height="32px" />
+                  <ExternalLink href={data.mdx.frontmatter.homepage}>
+                    <Icon
+                      as={FaLink}
+                      width="32px"
+                      height="32px"
+                      color="white"
+                      _hover={{ color: "yellow.200" }}
+                    />
+                  </ExternalLink>
                 </HStack>
               </Box>
               <Box w={["100%", "350px"]} flex="0 0 auto">

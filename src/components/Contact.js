@@ -8,14 +8,14 @@ import {
   Icon,
   Stack,
 } from "@chakra-ui/react"
-import { RiLinkedinFill, RiFacebookFill, RiGithubFill } from "react-icons/ri"
+import { RiLinkedinFill, RiTwitterFill, RiGithubFill } from "react-icons/ri"
 import { Wrapper } from "./Wrapper"
 import Section from "./Section"
 import ExternalLink from "./ExternalLink"
 
 export default function Contact() {
   return (
-    <Section>
+    <Section id="contact">
       <Wrapper>
         <Box>
           <Stack
@@ -40,7 +40,7 @@ export default function Contact() {
                 web development position
               </Text>
             </Box>
-            <a href="mailto:trinhthaibinh.ecom@gmail.com">
+            <a href="mailto:binhthaitrinh@csu.fullerton.edu">
               <Button colorScheme="yellow">LET'S CHAT</Button>
             </a>
           </Stack>
@@ -52,10 +52,10 @@ export default function Contact() {
                 Stay Connected
               </Text>
               <Text color="gray.500">Long Beach, CA</Text>
-              <Text>trinhthaibinh.ecom@gmail.com</Text>
+              <Text>binhthaitrinh@csu.fullerton.edu</Text>
             </Box>
             <HStack spacing={8}>
-              <ExternalLink href="www.facebook.com/t2bkun">
+              <ExternalLink href="https://twitter.com/binhthaitrinh">
                 <Box
                   _hover={{ bg: "blue.200" }}
                   transition="all 0.2s ease-out"
@@ -64,7 +64,7 @@ export default function Contact() {
                   padding="6px"
                 >
                   <Icon
-                    as={RiFacebookFill}
+                    as={RiTwitterFill}
                     width="30px"
                     height="30px"
                     color="blue.600"

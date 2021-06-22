@@ -21,10 +21,6 @@ const navs = [
     url: "/",
   },
   {
-    title: "About",
-    url: "/#about",
-  },
-  {
     title: "Projects",
     url: "/projects",
   },
@@ -35,6 +31,10 @@ const navs = [
   {
     title: "Blog",
     url: "/blog",
+  },
+  {
+    title: "Contact",
+    url: "/#contact",
   },
 ]
 
@@ -49,7 +49,7 @@ export default function Nav({ variant = "dark", ...props }) {
     >
       <Wrapper>
         <Flex alignItems="center" justifyContent="space-between">
-          <Link href="mailto:trinhthaibinh.ecom@gmail.com" zIndex="1000">
+          <Link href="mailto:binhthaitrinh@csu.fullerton.edu" zIndex="1000">
             <HStack>
               <Icon
                 as={RiMailSendLine}
@@ -64,7 +64,7 @@ export default function Nav({ variant = "dark", ...props }) {
                 marginLeft={6}
                 display={["none", "inline-block"]}
               >
-                trinhthaibinh.ecom@gmail.com
+                binhthaitrinh@csu.fullerton.edu
               </Text>
             </HStack>
           </Link>

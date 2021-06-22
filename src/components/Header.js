@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { Wrapper } from "./Wrapper"
-import { Box, VStack, Text, Button } from "@chakra-ui/react"
+import { Box, VStack, Button } from "@chakra-ui/react"
 import { Link } from "gatsby"
 import { motion } from "framer-motion"
 import { Title, Paragraph } from "./Typography"
@@ -52,7 +52,7 @@ export default function Header() {
               stack
             </Paragraph>
           </Box>
-          <Link to="/blog">
+          <Link to="/#contact">
             <Button colorScheme="blue">Connect with me!</Button>
           </Link>
         </VStack>

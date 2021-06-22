@@ -28,6 +28,10 @@ function SEO({
         {isBlogPost ? <meta property="og:type" content="article" /> : null}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
+        <meta property="og:image" content="/images/metaImage.jpg" />
+        <meta property="og:url" content="https://www.binhtrinh.dev" />
+        <meta property="twitter:tittle" content={title} />
+        <meta property="twitter:description" content={description} />
       </Helmet>
     </>
   )
