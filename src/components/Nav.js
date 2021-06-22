@@ -14,6 +14,8 @@ import {
 import { Link as GatsbyLink } from "gatsby"
 import { Wrapper } from "./Wrapper"
 import { RiMailSendLine } from "react-icons/ri"
+import useOnClickOutside from "../hooks/useOnClickOutside"
+import { useRef } from "react"
 
 const navs = [
   {
@@ -40,6 +42,10 @@ const navs = [
 
 export default function Nav({ variant = "dark", ...props }) {
   const [showMenu, setShowMenu] = React.useState(false)
+  const ref = useRef()
+
+  useOnClickOutside(ref, () => setShowMenu(false))
+
   return (
     <Box
       as="nav"
@@ -48,7 +54,7 @@ export default function Nav({ variant = "dark", ...props }) {
       {...props}
     >
       <Wrapper>
-        <Flex alignItems="center" justifyContent="space-between">
+        <Flex alignItems="center" justifyContent="space-between" ref={ref}>
           <Link href="mailto:binhthaitrinh@csu.fullerton.edu" zIndex="1000">
             <HStack>
               <Icon
@@ -69,12 +75,13 @@ export default function Nav({ variant = "dark", ...props }) {
             </HStack>
           </Link>
           <Box
-            position="absolute"
+            position="fixed"
             top="25px"
             right="25px"
             display={["block", "none"]}
-            onClick={() => setShowMenu(show => !show)}
+            onClick={() => setShowMenu(!showMenu)}
             zIndex="1000"
+            id="hamBtn"
           >
             <VStack spacing="4px">
               <Box
@@ -121,7 +128,7 @@ export default function Nav({ variant = "dark", ...props }) {
             justifyContent={["center", "flex-end"]}
             boxShadow={showMenu && "-2px -2px 10px rgba(0,0,0,0.2)"}
             alignItems="flex-end"
-            position={["absolute", "relative"]}
+            position={["fixed", "relative"]}
             height={["100vh", "auto"]}
             width="min(80%, 400px)"
             bg={["blue.500", "transparent"]}
