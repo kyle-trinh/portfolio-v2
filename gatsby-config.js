@@ -12,7 +12,10 @@ module.exports = {
     title: config.siteTitle,
     description: config.siteDescription,
     keywords: ["Software Engineer", "Web Developer"],
+    titleTemplate: "%s | Binh Trinh Personal Website",
     canonicalUrl: config.siteUrl,
+    url: "https://www.binhtrinh.dev/",
+    twitterUsername: "binhthaitrinh",
     image: config.siteLogo,
     author: {
       name: config.author,
@@ -27,6 +30,7 @@ module.exports = {
   /* Your site config here */
   plugins: [
     "@chakra-ui/gatsby-plugin",
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -42,7 +46,7 @@ module.exports = {
         icon: `static/images/logo.png`,
       },
     },
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
