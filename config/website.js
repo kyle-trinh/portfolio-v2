@@ -18,5 +18,5 @@ module.exports = {
 
   github: "https://github.com/binhthaitrinh",
   linkedin: "https://www.linkedin.com/in/binhthaitrinh",
-  facebook: "http://localhost:8000/www.facebook.com/t2bkun",
+  facebook: "https://www.facebook.com/t2bkun",
 }
