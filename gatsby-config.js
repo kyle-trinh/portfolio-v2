@@ -12,9 +12,9 @@ module.exports = {
     title: config.siteTitle,
     description: config.siteDescription,
     keywords: ["Software Engineer", "Web Developer"],
-    titleTemplate: "%s | Binh Trinh Personal Website",
+    titleTemplate: "%s | Kyle Trinh Personal Website",
     canonicalUrl: config.siteUrl,
-    url: "https://www.binhtrinh.dev/",
+    url: "https://www.kyletrinh.dev/",
     twitterUsername: "binhthaitrinh",
     image: config.siteLogo,
     author: {
@@ -37,8 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Binh Trinh's Portfolio`,
-        short_name: `BT Portfolio`,
+        name: `Kyle Trinh's Portfolio`,
+        short_name: `KT Portfolio`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `rgb(49,130,206)`,

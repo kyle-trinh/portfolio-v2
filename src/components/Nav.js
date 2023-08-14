@@ -55,7 +55,7 @@ export default function Nav({ variant = "dark", ...props }) {
     >
       <Wrapper>
         <Flex alignItems="center" justifyContent="space-between" ref={ref}>
-          <Link href="mailto:binhthaitrinh@csu.fullerton.edu" zIndex="1000">
+          <Link href="mailto:kyle.trinh94@gmail.com" zIndex="1000">
             <HStack>
               <Icon
                 as={RiMailSendLine}
@@ -70,7 +70,7 @@ export default function Nav({ variant = "dark", ...props }) {
                 marginLeft={6}
                 display={["none", "inline-block"]}
               >
-                binhthaitrinh@csu.fullerton.edu
+                kyle.trinh94@gmail.com
               </Text>
             </HStack>
           </Link>

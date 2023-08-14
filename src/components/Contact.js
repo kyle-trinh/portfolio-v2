@@ -40,7 +40,7 @@ export default function Contact() {
                 web development position
               </Text>
             </Box>
-            <a href="mailto:binhthaitrinh@csu.fullerton.edu">
+            <a href="mailto:kyle.trinh94@gmail.com">
               <Button colorScheme="yellow">LET'S CHAT</Button>
             </a>
           </Stack>
@@ -52,7 +52,7 @@ export default function Contact() {
                 Stay Connected
               </Text>
               <Text color="gray.500">Long Beach, CA</Text>
-              <Text>binhthaitrinh@csu.fullerton.edu</Text>
+              <Text>kyle.trinh94@gmail.com</Text>
             </Box>
             <HStack spacing={8}>
               <ExternalLink href="https://twitter.com/binhthaitrinh">
