@@ -28,7 +28,7 @@ export default function Header() {
           <Box width={["30%", "25%", "15%", "25%"]}>
             <StaticImage
               src="../assets/images/profile.png"
-              alt="Kyle Trinh"
+              alt="Binh Trinh"
               placeholder="blurred"
               layout="constrained"
               width={150}
@@ -37,7 +37,7 @@ export default function Header() {
             />
           </Box>
           <Paragraph textAlign="center" fontSize={["16px", "24px"]}>
-            Hi, I'm Kyle{" "}
+            Hi, I'm Binh{" "}
             <span role="img" aria-label="Hello">
               👋
             </span>
