@@ -71,7 +71,7 @@ export default function Contact() {
                   />
                 </Box>
               </ExternalLink>
-              <ExternalLink href="https://github.com/binhthaitrinh">
+              <ExternalLink href="https://github.com/kyle-trinh">
                 <Box
                   bg="blue.100"
                   borderRadius="50%"

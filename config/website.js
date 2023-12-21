@@ -16,7 +16,7 @@ module.exports = {
   themeColor: "#3182CE",
   backgroundColor: "#1A365D",
 
-  github: "https://github.com/binhthaitrinh",
+  github: "https://github.com/kyle-trinh",
   linkedin: "https://www.linkedin.com/in/binhthaitrinh",
   facebook: "https://www.facebook.com/t2bkun",
 }
